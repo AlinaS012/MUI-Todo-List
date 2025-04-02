@@ -26,14 +26,14 @@ interface TopbarProps {
   miniDrawerWidth: number;
 }
 
-const Topbar= ({
+const Topbar = ({
   expand,
   mobileOpen,
   setExpand,
   setMobileOpen,
   drawerWidth,
   miniDrawerWidth,
-}: TopbarProps ) => {
+}: TopbarProps) => {
   const handleDrawerExpand = () => {
     setExpand(!expand);
   };
@@ -64,7 +64,9 @@ const Topbar= ({
             disableRipple
             sx={{ lineHeight: 0, display: { xs: 'none', sm: 'block', lg: 'none' } }}
           >
-            <Image sx={{}} src={'images/Logo.png'} alt="logo" height={40} width={40} />
+            {/* <Image sx={{}} src={'images/Logo.png'} alt="logo" height={40} width={40} /> */}
+            <IconifyIcon icon="flat-color-icons:todo-list" height={48} width={48} />
+
           </ButtonBase>
 
           <Toolbar>
@@ -110,7 +112,7 @@ const Topbar= ({
         </Stack>
 
         <Stack spacing={{ xs: 1, sm: 2 }} flexDirection={"row"} justifyContent="space-between" gap={3} alignItems="center">
-          <LanguageSelect />
+          {/* <LanguageSelect /> */}
           <IconButton>
             <Badge
               color="error"

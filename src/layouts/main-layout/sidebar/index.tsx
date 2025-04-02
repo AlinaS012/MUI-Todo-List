@@ -51,7 +51,7 @@ const Sidebar = ({
           display: { xs: 'block', lg: 'none' },
         })}
       >
-        <DrawerItems showLogo={true} expand={true} />{/*expand={true}*/} 
+        <DrawerItems showLogo={true} expand={true} />
       </Drawer>
 
       <Drawer

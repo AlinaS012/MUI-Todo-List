@@ -39,7 +39,7 @@ const DrawerItems = ({ showLogo, expand }: DrawerItemsProps) => {
             justifyContent="center"
           >
             {/* <Image src={'images/Logo.png'} alt="logo" height={44} width={44} /> */}
-            <IconifyIcon icon="flat-color-icons:todo-list" height={48} width={48}/>
+            <IconifyIcon icon="flat-color-icons:todo-list" height={48} width={48} />
             {
               showLogo ? (
                 <Typography variant="h4" letterSpacing={1} fontWeight={600} >
@@ -220,31 +220,7 @@ const DrawerItems = ({ showLogo, expand }: DrawerItemsProps) => {
             })
           }
         </Stack>
-        {/* </Stack> */}
       </Box>
-
-      {/* <Stack
-        spacing={expand ? 1 : 2}
-        direction={expand ? 'row' : 'column'}
-        alignItems="center"
-        justifyContent="space-between"
-      >
-        <Stack component={Link} href="#!" spacing={1.5} alignItems="center">
-          <Image src={'images/Profile.jpg'} height={50} width={50} sx={{ borderRadius: 3 }} />
-          <Box sx={[expand ? { display: 'block' } : { display: 'none' }]}>
-            <Typography mb={-0.5} variant="body2" color="text.primary" fontWeight={700}>
-              Alina Soomro
-            </Typography>
-            <Typography mt={-0.5} variant="caption" color="text.disabled" fontWeight={400}>
-              Free Account
-            </Typography>
-          </Box>
-        </Stack>
-
-        <IconButton LinkComponent={Link} href="#!">
-          <IconifyIcon icon="majesticons:logout" color="text.disabled" />
-        </IconButton>
-      </Stack> */}
     </>
   );
 };

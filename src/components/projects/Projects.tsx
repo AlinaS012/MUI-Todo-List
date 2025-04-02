@@ -1,10 +1,11 @@
 import React from "react";
 import AddTask from "../addtask/AddTask"
-import { Box, FormControlLabel, Slide, Stack, Switch, Typography } from "@mui/material";
+import { Box, FormControlLabel, Slide, Stack, Switch, Tooltip, Typography } from "@mui/material";
 import TodoList from "../todolist/TodoList";
 import IconifyIcon from "../base/IconifyIcon";
 import RightTab from "../righttab/RightTab";
 import { Project, ProjectList } from "../../types/contextTypes";
+import AddProjectModal from "../addprojectmodal/AddProjectModal";
 // interface ProjectsListProp {
 //     projectsList: {
 //         title: string;
@@ -29,6 +30,7 @@ interface OpenList {
 const Projects = ({ projectsList }: { projectsList: Project[] }) => {
     const [openList, setOpenList] = React.useState<Boolean[]>([]);
     const [checked, setChecked] = React.useState<Boolean[]>([]);
+    const [openProjectModal, setOpenProjectModal] = React.useState<boolean>(false)
 
     React.useEffect(() => {
         const listArr = Array(projectsList.length).fill(false)//true
@@ -39,6 +41,9 @@ const Projects = ({ projectsList }: { projectsList: Project[] }) => {
     React.useEffect(() => {
         console.log(openList, "openList")
     }, [openList])
+    React.useEffect(() => {
+        console.log(openProjectModal, "change in modal state")
+    }, [openProjectModal])
     return (<Box display={'flex'}>
         <Box flex={10}>
             <Stack
@@ -51,8 +56,31 @@ const Projects = ({ projectsList }: { projectsList: Project[] }) => {
                 marginBottom={1} marginTop={6} display={'flex'} flexDirection={'row'}
                 gap={1.5} alignItems={'center'}
             >
-                <Typography variant="h2">Home</Typography>
-                <IconifyIcon sx={{ fontSize: 36 }} icon={"twemoji:house"} />
+                <Box
+                    sx={{
+                        width: {
+                            xs: '90%', md: '90%', lg: '90%'//lg: '75%' 
+                        }
+                    }}
+                    margin={'0 auto'}
+                    marginBottom={1} marginTop={6} display={'flex'} flexDirection={'row'}
+                    gap={1.5} alignItems={'center'}
+                >
+                    <Typography variant="h2">Home</Typography>
+                    <IconifyIcon sx={{ fontSize: 36 }} icon={"twemoji:house"} />
+                </Box>
+                <Tooltip title="Add Project">
+                    <Box
+                        sx={{
+                            "&:hover": {
+                                cursor: "pointer"
+                            }
+                        }}
+                        onClick={() => setOpenProjectModal(true)}
+                    >
+                        <IconifyIcon sx={{ fontSize: 20 }} color="primary" icon="ic:round-plus" />
+                    </Box>
+                </Tooltip>
             </Stack>
             <AddTask sx={{
                 width: {
@@ -60,8 +88,9 @@ const Projects = ({ projectsList }: { projectsList: Project[] }) => {
                     // lg: '75%' 
                 },
                 margin: '0 auto', display: 'flex', flexDirection: 'row',
-                gap: '1.5rem', alignItems: 'center', mb: 1
+                alignItems: 'center', mb: 1
             }}
+
             />
 
             <Box sx={{ mt: 6 }}>
@@ -70,6 +99,7 @@ const Projects = ({ projectsList }: { projectsList: Project[] }) => {
                         return (
                             <>
                                 <Box
+                                    key={index}
                                     sx={{
                                         width: {
                                             xs: '90%', md: '90%', //lg: '75%' 
@@ -119,16 +149,11 @@ const Projects = ({ projectsList }: { projectsList: Project[] }) => {
                                             }}><IconifyIcon icon="solar:menu-dots-outline" /></Box>
                                     </Box>
                                 </Box>
-                                {/* <FormControlLabel
-                                    control={<Switch checked={checked[index]} />}
-                                    label="Show"
-                                    sx={{ display: 'none' }}
-                                /> */}
-
+                                
                                 {openList[index]
                                     &&
 
-                                    <TodoList ind={checked[index]}
+                                    <TodoList title={listitem.title} ind={checked[index]}
                                         textList={listitem.todos} />
                                 }
                             </>
@@ -138,6 +163,7 @@ const Projects = ({ projectsList }: { projectsList: Project[] }) => {
             </Box >
         </Box>
         <RightTab />
+        {openProjectModal && <AddProjectModal open={openProjectModal} setOpen={setOpenProjectModal} />}
     </Box>)
 }
 

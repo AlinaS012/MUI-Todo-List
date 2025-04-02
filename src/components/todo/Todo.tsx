@@ -30,13 +30,11 @@ const Todo = ({ text }: TodoProps) => {
     // const handleOpen = () => setOpenCalendarModal(true);
     const handleClose = () => setOpenCalendarModal(false);
     return (<div  onMouseEnter={() => showOptions(true)} onMouseLeave={() => showOptions(false)}>
-        {/* {options ? <IconifyIcon sx={{ ml: 2, display:'inline' }} icon="mingcute:dots-fill" /> : null} */}
-
+        
         <Stack display={'inline'} padding={'1 2'} sx={{ borderBottom: '1px solid #c1c1c1' }}>
             <Stack display={'flex'} justifyContent={'space-between'} flexDirection={'row'}>
                 <Box display={'flex'} gap={1} alignItems={'center'}>
                     <Box>
-                        {/* {options ? <IconifyIcon sx={{ ml: 2 }} icon="mingcute:dots-fill" /> : null} */}
                         <Checkbox sx={{ borderRadius: '50%' }} />
                     </Box>
                     <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', color: 'gray', fontSize: 13, mt: 0.5 }}>
@@ -46,13 +44,9 @@ const Todo = ({ text }: TodoProps) => {
                     </Box>
                 </Box>
                 <Box mt={2}>
-                    {/* {options ? todoOptions : null} */}
                     {todoOptions}
                 </Box>
             </Stack>
-            {/* <Box sx={{ cursor: 'pointer', alignItems: 'center' }} ml={1.5} onClick={handleOpen}>
-                <IconifyIcon sx={{ fontSize: 25, color: 'green' }} icon="mdi:calendar-outline" />
-            </Box> */}
         </Stack>
         <Modal
             open={openCalendarModal}

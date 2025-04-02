@@ -11,7 +11,7 @@ import React, { useContext, useReducer, useState, ReactNode } from "react"
 // }
 import { Project, ProjectList, ProjectsListProp, Todo } from '../types/contextTypes'
 
-interface State {
+export interface State {
     projectTodos: Project[];
 }
 

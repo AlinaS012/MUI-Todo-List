@@ -7,12 +7,12 @@ import ListItemText from '@mui/material/ListItemText';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import IconifyIcon from '../../../components/base/IconifyIcon';
 
-// interface Language {
-//   id: number;
-//   code: string;
-//   lang: string;
-//   flag: string;
-// }
+interface Language {
+  id: number;
+  code: string;
+  lang: string;
+  flag: string;
+}
 
 const languages = [
     {
@@ -60,7 +60,7 @@ const LanguageSelect = () => {
     setAnchorEl(null);
   };
 
-  const handleLanguageItemClick = (langItem) => {
+  const handleLanguageItemClick = (langItem: Language)=> {
     setLanguage(langItem);
     handleFlagMenuClose();
   };

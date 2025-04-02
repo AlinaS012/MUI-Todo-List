@@ -3,7 +3,6 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Sidebar from './sidebar';
 import Topbar from './topbar';
-// import Footer from './footer';
 
 const MainLayout = ({ children }: React.PropsWithChildren) => {
   const [expand, setExpand] = React.useState(true); //false
@@ -31,17 +30,13 @@ const MainLayout = ({ children }: React.PropsWithChildren) => {
           miniDrawerWidth={miniDrawerWidth}
         />
         <Box mt={13}//20 
-        flexGrow={1}
-        // mr={4}
-          // ml={expand ? '260px' : '110px'}
-
+          flexGrow={1}
           sx={{
             // ml: { xs: '20px', md: '20px', lg: expand ? '260px' : '110px' }
             ml: { xs: '5px', md: '5px', lg: expand ? '240px' : '90px' }
           }}
-          
+
         >{children}</Box>
-        {/* <Footer /> */}
       </Box>
     </Stack>
   );

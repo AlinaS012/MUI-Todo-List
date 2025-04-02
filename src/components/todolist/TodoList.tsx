@@ -11,10 +11,10 @@ import { Todo as TodoType } from "../../types/contextTypes";
 interface TextListProp {
     textList: TodoType[];
     ind: Boolean;
+    title: string;
 }
 
-const TodoList = ({ textList, ind
-}: TextListProp) => {
+const TodoList: React.FC<TextListProp> = ({ textList, ind, title }) => {
     return (<>
         <Stack
             display={'flex'}
@@ -38,8 +38,10 @@ const TodoList = ({ textList, ind
                 xs: '90%', md: '90%', lg: '90%'//lg: '75%' 
             },
             margin: '0 auto', display: 'flex', flexDirection: 'row',
-            gap: '1.5rem', alignItems: 'center', mb: 1
+            alignItems: 'center', mb: 1
         }}
+            option={title}
+            variableOptions={true}
         />
     </>)
 }

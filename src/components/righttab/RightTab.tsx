@@ -15,14 +15,15 @@ const RightTab = () => {
         }
     },[videoRef])
     return (
-        <Box flex={7} display={{ xs: 'none', md: 'block', lg: 'block' }} borderLeft={"1px solid rgba(25,25,25, 0.1)"}>
+        <Box flex={7} display={{ xs: 'none', md: 'block', lg: 'block' }} borderLeft={"1px solid rgba(25,25,25, 0.1)"} padding={1}>
             <Box display={'flex'} borderBottom={"1px solid rgba(25,25,25, 0.1)"} height={20} justifyContent={'space-between'} padding={"1.2rem 0.7rem"} alignItems={'center'} >
-                <Box display={'flex'} gap={0.8} justifyContent={'center'} alignItems={'center'} >
+                <Box display={'flex'} gap={0.8} justifyContent={'space-between'} alignItems={'center'} >
                     <Checkbox sx={{borderColor: "rgba(25,25,25,0.3)"}} />
                     <Divider orientation="vertical" flexItem />
                     <Box display={'flex'} flexDirection={'row'} gap={1} alignItems={'center'}>
                         <IconifyIcon icon="solar:calendar-bold" sx={{ color: "rgba(25,25,25,0.3)" }} />
-                        <Typography variant="h6" color="rgba(25,25,25,0.3)">     Due Date
+                        <Typography variant="h6" color="rgba(25,25,25,0.3)" fontSize={12}> 
+                            Due Date
                         </Typography>
                     </Box>
                 </Box>
@@ -57,9 +58,6 @@ const RightTab = () => {
                 <video ref={videoRef} id="vid" loop controls muted style={{ borderRadius: '5px', width: '100%' }}>
                     <source src="./videos/list.mp4" type="video/mp4" />
                 </video>
-                {/* <script>
-                    {document.getElementById('vid').play()}
-                </script> */}
             </Box>
         </Box>)
 }
