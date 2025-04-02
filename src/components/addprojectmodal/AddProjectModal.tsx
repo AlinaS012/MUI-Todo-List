@@ -1,8 +1,6 @@
-import { Dispatch } from "react"
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { TextField } from "@mui/material";
 import { useFormik } from "formik";
@@ -25,7 +23,7 @@ const AddProjectModal: React.FC<AddProjectModalProp> = ({ open, setOpen }) => {
         console.log(open, setOpen)
     })
 
-    const { dispatch, state } = React.useContext(TodoListContext);
+    const { dispatch } = React.useContext(TodoListContext);
     const formik = useFormik({
         initialValues: {
             project: '',

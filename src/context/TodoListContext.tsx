@@ -1,4 +1,4 @@
-import React, { useContext, useReducer, useState, ReactNode } from "react"
+import React, { useReducer, ReactNode } from "react"
 // interface Todo {
 //     title: string;
 //     // desc?: string;
@@ -9,7 +9,7 @@ import React, { useContext, useReducer, useState, ReactNode } from "react"
 //     title: string;
 //     todos: Todo[];
 // }
-import { Project, ProjectList, ProjectsListProp, Todo } from '../types/contextTypes'
+import { Project, Todo } from '../types/contextTypes'
 
 export interface State {
     projectTodos: Project[];

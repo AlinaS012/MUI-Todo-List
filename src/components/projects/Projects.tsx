@@ -1,10 +1,10 @@
 import React from "react";
 import AddTask from "../addtask/AddTask"
-import { Box, FormControlLabel, Slide, Stack, Switch, Tooltip, Typography } from "@mui/material";
+import { Box, Stack, Tooltip, Typography } from "@mui/material";
 import TodoList from "../todolist/TodoList";
 import IconifyIcon from "../base/IconifyIcon";
 import RightTab from "../righttab/RightTab";
-import { Project, ProjectList } from "../../types/contextTypes";
+import { Project } from "../../types/contextTypes";
 import AddProjectModal from "../addprojectmodal/AddProjectModal";
 // interface ProjectsListProp {
 //     projectsList: {
@@ -13,9 +13,9 @@ import AddProjectModal from "../addprojectmodal/AddProjectModal";
 //     }[]
 // }
 
-interface OpenList {
-    openList: boolean[];
-}
+// interface OpenList {
+//     openList: boolean[];
+// }
 
 // const projectsList: ProjectsListProp = [
 //     {

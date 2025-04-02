@@ -9,7 +9,7 @@ const App = lazy(() => import('../App'));
 const MainLayout = lazy(() => import('../layouts/main-layout'));
 // const AuthLayout = lazy(() => import('../layouts/auth-layout'));
 const Dashboard = lazy(() => import('../pages/dashboard'));
-const Error404 = lazy(() => import('../pages/errors/Error404'));
+// const Error404 = lazy(() => import('../pages/errors/Error404'));
 
 const routes = [
   {

@@ -1,9 +1,9 @@
-import { Box, Button, FormControl, InputLabel, Menu, MenuItem, TextField, Typography, SxProps, Tooltip } from "@mui/material";
-import React, { useContext, useState } from "react";
+import { Box, Button, Menu, MenuItem, TextField, Typography, SxProps, Tooltip } from "@mui/material";
+import React from "react";
 import IconifyIcon from "../base/IconifyIcon";
 import * as yup from 'yup';
 import { useFormik } from 'formik';
-import { State, TodoListContext } from "../../context/TodoListContext";
+import { TodoListContext } from "../../context/TodoListContext";
 import { violet } from "../../theme/colors";
 import { Project } from "../../types/contextTypes";
 

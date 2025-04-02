@@ -1,5 +1,5 @@
 import Todo from "../todo/Todo";
-import { Slide, Stack } from "@mui/material";
+import { Stack } from "@mui/material";
 import AddTask from "../addtask/AddTask";
 import { Todo as TodoType } from "../../types/contextTypes";
 
@@ -10,11 +10,11 @@ import { Todo as TodoType } from "../../types/contextTypes";
 // }
 interface TextListProp {
     textList: TodoType[];
-    ind: Boolean;
+    ind?: Boolean;
     title: string;
 }
 
-const TodoList: React.FC<TextListProp> = ({ textList, ind, title }) => {
+const TodoList: React.FC<TextListProp> = ({ textList, title }) => {
     return (<>
         <Stack
             display={'flex'}

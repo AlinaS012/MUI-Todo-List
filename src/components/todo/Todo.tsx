@@ -1,9 +1,9 @@
 import {
-    Box, 
-    Checkbox, 
-    Modal, 
+    Box,
+    Checkbox,
+    Modal,
     Stack,
-    Typography,  
+    Typography,
 } from "@mui/material";
 import React from "react";
 import IconifyIcon from "../base/IconifyIcon";
@@ -29,8 +29,7 @@ const Todo = ({ text }: TodoProps) => {
     const [value, setValue] = React.useState(dayjs('2022-04-17T15:30'));
     // const handleOpen = () => setOpenCalendarModal(true);
     const handleClose = () => setOpenCalendarModal(false);
-    return (<div  onMouseEnter={() => showOptions(true)} onMouseLeave={() => showOptions(false)}>
-        
+    return (<div onMouseEnter={() => { console.log(options); showOptions(true) }} onMouseLeave={() => showOptions(false)}>
         <Stack display={'inline'} padding={'1 2'} sx={{ borderBottom: '1px solid #c1c1c1' }}>
             <Stack display={'flex'} justifyContent={'space-between'} flexDirection={'row'}>
                 <Box display={'flex'} gap={1} alignItems={'center'}>

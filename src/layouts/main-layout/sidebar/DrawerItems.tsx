@@ -11,7 +11,6 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemButton from '@mui/material/ListItemButton';
 import IconifyIcon from '../../../components/base/IconifyIcon';
-import Image from '../../../components/base/Image';
 import sitemap from '../../../routes/sitemap';
 
 interface DrawerItemsProps {
